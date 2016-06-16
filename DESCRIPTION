@@ -1,6 +1,6 @@
 Package: wakefield
 Title: Generate Random Data Sets
-Version: 0.2.1
+Version: 0.3.0
 Authors@R: c(person("Tyler", "Rinker", email =
         "tyler.rinker@gmail.com", role = c("aut", "cre")),
         person("Josh", "O'Brien", role = "ctb"), person("Ananda",
@@ -12,7 +12,7 @@ Description: Generates random data sets including: data.frames, lists,
 Depends: R (>= 3.1.2)
 Imports: chron, ggplot2, dplyr, stringi
 Suggests: testthat
-Date: 2016-01-03
+Date: 2016-06-15
 License: GPL-2
 LazyData: TRUE
 URL: https://github.com/trinker/wakefield
@@ -36,10 +36,10 @@ Collate: 'utils.R' 'r_sample.R' 'age.R' 'r_sample_factor.R' 'animal.R'
         'varname.R' 'year.R' 'zip_code.R'
 RoxygenNote: 5.0.1
 NeedsCompilation: no
-Packaged: 2016-01-04 02:33:02 UTC; Tyler
+Packaged: 2016-06-16 00:41:52 UTC; Tyler
 Author: Tyler Rinker [aut, cre],
   Josh O'Brien [ctb],
   Ananda Mahto [ctb],
   Matthew Sigal [ctb]
 Repository: CRAN
-Date/Publication: 2016-01-04 11:05:34
+Date/Publication: 2016-06-16 06:46:28

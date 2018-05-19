@@ -1,31 +1,28 @@
-wakefield   [![Follow](https://img.shields.io/twitter/follow/tylerrinker.svg?style=social)](https://twitter.com/intent/follow?screen_name=tylerrinker)
+wakefield   
 ============
 
 
 [![Project Status: Active - The project has reached a stable, usable
 state and is being actively
-developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
+developed.](https://www.repostatus.org/badges/0.1.0/active.svg)](https://www.repostatus.org/#active)
 [![Build
 Status](https://travis-ci.org/trinker/wakefield.svg?branch=master)](https://travis-ci.org/trinker/wakefield)
 [![Coverage
 Status](https://coveralls.io/repos/trinker/wakefield/badge.svg?branch=master)](https://coveralls.io/r/trinker/wakefield?branch=master)
-[![DOI](https://zenodo.org/badge/5398/trinker/wakefield.svg)](http://dx.doi.org/10.5281/zenodo.17172)
-[![](http://cranlogs.r-pkg.org/badges/wakefield)](https://cran.r-project.org/package=wakefield)
-<a href="https://img.shields.io/badge/Version-0.3.0-orange.svg"><img src="https://img.shields.io/badge/Version-0.3.0-orange.svg" alt="Version"/></a>
-</p>
+[![DOI](https://zenodo.org/badge/5398/trinker/wakefield.svg)](https://dx.doi.org/10.5281/zenodo.17172)
+[![](https://cranlogs.r-pkg.org/badges/wakefield)](https://cran.r-project.org/package=wakefield)
+
 **wakefield** is designed to quickly generate random data sets. The user
 passes `n` (number of rows) and predefined vectors to the `r_data_frame`
 function to produce a `dplyr::tbl_df` object.
 
-&lt;img src="inst/wakefield\_logo/r\_wakefield.png" width="60%",
-alt=""&gt;
+![](tools/wakefield_logo/r_wakefield.png)
 
 
 Table of Contents
 ============
 
 -   [Installation](#installation)
--   [Help](#help)
 -   [Contact](#contact)
 -   [Demonstration](#demonstration)
     -   [Getting Started](#getting-started)
@@ -54,12 +51,6 @@ the development version:
     pacman::p_load_gh("trinker/wakefield")
     pacman::p_load(dplyr, tidyr, ggplot2)
 
-Help
-====
-
--   [Package PDF Help
-    Manual](https://dl.dropboxusercontent.com/u/61803503/wakefield.pdf)
-
 Contact
 =======
 
@@ -84,7 +75,7 @@ attribute. For example here we see the `race` variable function:
 
     race(n=10)
 
-    ##  [1] White White White White White White Black White White Black
+    ##  [1] White White White White White White White White White White
     ## Levels: White Hispanic Black Asian Bi-Racial Native Other Hawaiian
 
     attributes(race(n=10))
@@ -108,21 +99,20 @@ variable functions but is set once in `r_data_frame`:
         race
     )
 
-    ## Source: local data frame [500 x 1]
-    ## 
-    ##        Race
-    ##      (fctr)
-    ## 1     White
-    ## 2     Black
-    ## 3     White
-    ## 4     White
-    ## 5     White
-    ## 6     White
-    ## 7  Hispanic
-    ## 8     White
-    ## 9     Black
-    ## 10    White
-    ## ..      ...
+    ## # A tibble: 500 x 1
+    ##    Race    
+    ##    <fct>   
+    ##  1 Hispanic
+    ##  2 Asian   
+    ##  3 White   
+    ##  4 White   
+    ##  5 White   
+    ##  6 Black   
+    ##  7 White   
+    ##  8 Hispanic
+    ##  9 White   
+    ## 10 Hispanic
+    ## # ... with 490 more rows
 
 The power of `r_data_frame` is apparent when we use many modular
 variable functions:
@@ -139,27 +129,26 @@ variable functions:
         died
     )
 
-    ## Source: local data frame [500 x 8]
-    ## 
-    ##       ID     Race   Age    Sex     Hour    IQ Height  Died
-    ##    (chr)   (fctr) (int) (fctr)   (tims) (dbl)  (dbl) (lgl)
-    ## 1    001    White    35   Male 00:00:00   100     65  TRUE
-    ## 2    002    White    35   Male 00:00:00   114     79  TRUE
-    ## 3    003    White    20   Male 00:00:00   116     63  TRUE
-    ## 4    004    White    20 Female 00:00:00    91     77  TRUE
-    ## 5    005    White    23 Female 00:00:00   101     64 FALSE
-    ## 6    006    Asian    27 Female 00:00:00   119     72  TRUE
-    ## 7    007 Hispanic    26 Female 00:00:00    89     66 FALSE
-    ## 8    008    White    24   Male 00:00:00    84     63  TRUE
-    ## 9    009    White    26 Female 00:00:00   108     67  TRUE
-    ## 10   010 Hispanic    30 Female 00:30:00   100     72 FALSE
-    ## ..   ...      ...   ...    ...      ...   ...    ...   ...
+    ## # A tibble: 500 x 8
+    ##    ID    Race    Age Sex    Hour           IQ Height Died 
+    ##    <chr> <fct> <int> <fct>  <S3: times> <dbl>  <dbl> <lgl>
+    ##  1 001   White    50 Male   00:00:00       88     68 TRUE 
+    ##  2 002   White    31 Male   00:00:00      118     72 FALSE
+    ##  3 003   White    60 Male   00:00:00      109     68 TRUE 
+    ##  4 004   White    72 Female 00:00:00      112     68 TRUE 
+    ##  5 005   White    81 Male   00:00:00      103     71 TRUE 
+    ##  6 006   Black    21 Male   00:00:00       87     72 FALSE
+    ##  7 007   White    64 Female 00:00:00      103     71 FALSE
+    ##  8 008   White    26 Female 00:00:00       95     65 TRUE 
+    ##  9 009   White    41 Male   00:00:00      109     74 FALSE
+    ## 10 010   White    64 Male   00:00:00      103     70 TRUE 
+    ## # ... with 490 more rows
 
 There are 49 **wakefield** based variable functions to chose from,
 spanning **R**'s various data types (see `?variables` for details).
 
-<!-- html table generated in R 3.2.4 by xtable 1.8-2 package -->
-<!-- Sat Apr 30 11:06:18 2016 -->
+<!-- html table generated in R 3.6.0 by xtable 1.8-2 package -->
+<!-- Sat May 19 09:30:53 2018 -->
 <table>
 <tr>
 <td>
@@ -334,6 +323,7 @@ sex
 <p class="caption">
 <b><em>Available Variable Functions</em></b>
 </p>
+
 However, the user may also pass their own vector producing functions or
 vectors to `r_data_frame`. Those with an `n` argument can be set by
 `r_data_frame`:
@@ -352,22 +342,20 @@ vectors to `r_data_frame`. Those with an `n` argument can be set by
         died
     )
 
-    ## Source: local data frame [500 x 10]
-    ## 
-    ##       ID     Scoring Smoker   Race   Age    Sex     Hour    IQ Height
-    ##    (chr)       (dbl)  (lgl) (fctr) (int) (fctr)   (tims) (dbl)  (dbl)
-    ## 1    001  0.35729131   TRUE  White    28   Male 00:00:00    80     72
-    ## 2    002  0.03406854   TRUE  White    20   Male 00:00:00   101     75
-    ## 3    003 -0.21320876   TRUE  White    30   Male 00:00:00    81     64
-    ## 4    004 -0.14670245   TRUE  White    32 Female 00:00:00    87     69
-    ## 5    005 -0.30578953  FALSE  White    33   Male 00:00:00    92     73
-    ## 6    006 -0.31817961   TRUE  White    29   Male 00:00:00    90     74
-    ## 7    007  1.14035908  FALSE  Black    31   Male 00:00:00   103     61
-    ## 8    008 -1.72324249  FALSE  Asian    22   Male 00:00:00    88     63
-    ## 9    009  0.10694555   TRUE  White    28   Male 00:00:00   111     66
-    ## 10   010 -0.24042020   TRUE  White    33   Male 00:00:00    94     70
-    ## ..   ...         ...    ...    ...   ...    ...      ...   ...    ...
-    ## Variables not shown: Died (lgl)
+    ## # A tibble: 500 x 10
+    ##    ID    Scoring Smoker Race       Age Sex    Hour         IQ Height Died 
+    ##    <chr>   <dbl> <lgl>  <fct>    <int> <fct>  <S3: tim> <dbl>  <dbl> <lgl>
+    ##  1 001    1.78   TRUE   White       70 Female 00:00:00     87     66 FALSE
+    ##  2 002    1.38   TRUE   White       41 Female 00:00:00     98     61 TRUE 
+    ##  3 003    0.641  FALSE  White       81 Female 00:00:00    104     68 FALSE
+    ##  4 004    0.461  FALSE  White       84 Female 00:00:00    109     70 TRUE 
+    ##  5 005    0.179  FALSE  White       23 Female 00:00:00    109     70 FALSE
+    ##  6 006    0.0787 FALSE  White       32 Female 00:00:00    105     69 TRUE 
+    ##  7 007   -1.52   FALSE  White       69 Female 00:00:00    104     71 FALSE
+    ##  8 008    1.04   FALSE  White       24 Female 00:00:00    105     74 TRUE 
+    ##  9 009   -0.390  FALSE  White       66 Female 00:00:00    103     70 FALSE
+    ## 10 010    1.13   FALSE  Hispanic    84 Male   00:00:00     93     68 TRUE 
+    ## # ... with 490 more rows
 
     r_data_frame(
         n = 500,
@@ -376,21 +364,20 @@ vectors to `r_data_frame`. Those with an `n` argument can be set by
         grade, grade, grade
     )
 
-    ## Source: local data frame [500 x 7]
-    ## 
-    ##       ID Age_1 Age_2 Age_3 Grade_1 Grade_2 Grade_3
-    ##    (chr) (int) (int) (int)   (dbl)   (dbl)   (dbl)
-    ## 1    001    32    21    25    86.0    90.8    90.6
-    ## 2    002    29    27    35    89.7    89.0    86.1
-    ## 3    003    21    35    34    85.0    83.6    85.7
-    ## 4    004    28    20    32    91.1    79.3    81.0
-    ## 5    005    30    31    31    89.3    92.8    96.4
-    ## 6    006    23    33    22    91.1    79.8    89.7
-    ## 7    007    30    31    32    87.1    91.2    90.3
-    ## 8    008    22    32    31    85.9    87.9    89.3
-    ## 9    009    31    23    23    85.9    91.1    90.0
-    ## 10   010    22    24    32    81.0    88.7    84.8
-    ## ..   ...   ...   ...   ...     ...     ...     ...
+    ## # A tibble: 500 x 7
+    ##    ID    Age_1 Age_2 Age_3 Grade_1 Grade_2 Grade_3
+    ##    <chr> <int> <int> <int>   <dbl>   <dbl>   <dbl>
+    ##  1 001      67    47    46    93.7    89.9    83.7
+    ##  2 002      19    26    74    91.8    89      93.1
+    ##  3 003      56    20    27    86.5    84.2    80.8
+    ##  4 004      81    30    71    91.4    90.6    88.8
+    ##  5 005      27    64    81    86.9    94.2    89.8
+    ##  6 006      44    81    28    94.7    87.4    90.9
+    ##  7 007      20    36    70    93.1    93.2    94.1
+    ##  8 008      62    73    22    88.1    85.2    87.4
+    ##  9 009      24    78    53    88.1    84.6    87.5
+    ## 10 010      62    35    26    87.3    83.6    89.8
+    ## # ... with 490 more rows
 
 While passing variable functions to `r_data_frame` without call
 parenthesis is handy, the user may wish to set arguments. This can be
@@ -412,22 +399,20 @@ done through call parenthesis as we do with `data.frame` or
         died
     )
 
-    ## Source: local data frame [500 x 11]
-    ## 
-    ##       ID     Scoring Smoker Reading(mins)   Race   Age    Sex     Hour
-    ##    (chr)       (dbl)  (lgl)         (int) (fctr) (int) (fctr)   (tims)
-    ## 1    001 -1.37609383  FALSE            18  White    11 Female 00:00:00
-    ## 2    002  2.03200096  FALSE            14  White    12   Male 00:00:00
-    ## 3    003 -0.13097071  FALSE            21  Black    13   Male 00:00:00
-    ## 4    004  0.82349800   TRUE            10  White     9   Male 00:00:00
-    ## 5    005  0.05255655  FALSE            10  Black     8   Male 00:00:00
-    ## 6    006 -0.10398656   TRUE            12  White    10 Female 00:00:00
-    ## 7    007  0.56926154  FALSE            23  White    14   Male 00:00:00
-    ## 8    008  0.12042217  FALSE            23  Black     8 Female 00:00:00
-    ## 9    009  0.20717877   TRUE            11  White    14 Female 00:30:00
-    ## 10   010  2.21729855  FALSE            26  White    10 Female 00:30:00
-    ## ..   ...         ...    ...           ...    ...   ...    ...      ...
-    ## Variables not shown: IQ (dbl), Height (dbl), Died (lgl)
+    ## # A tibble: 500 x 11
+    ##    ID    Scoring Smoker `Reading(mins)` Race    Age Sex    Hour         IQ
+    ##    <chr>   <dbl> <lgl>            <int> <fct> <int> <fct>  <S3: tim> <dbl>
+    ##  1 001     0.900 TRUE                16 White    10 Female 00:00:00    103
+    ##  2 002    -0.111 FALSE               19 White     9 Male   00:00:00     99
+    ##  3 003     0.531 FALSE               16 White    13 Male   00:00:00     94
+    ##  4 004    -1.87  FALSE               26 White     8 Female 00:00:00     83
+    ##  5 005    -0.539 FALSE               18 White    14 Male   00:00:00    104
+    ##  6 006    -0.646 FALSE               19 White    10 Female 00:00:00     97
+    ##  7 007     0.326 TRUE                21 White     9 Male   00:00:00    106
+    ##  8 008     2.34  FALSE               20 White     9 Female 00:00:00     99
+    ##  9 009    -0.156 TRUE                27 White     8 Male   00:30:00    104
+    ## 10 010     0.763 TRUE                17 Black    13 Female 00:30:00    108
+    ## # ... with 490 more rows, and 2 more variables: Height <dbl>, Died <lgl>
 
 Random Missing Observations
 ---------------------------
@@ -452,34 +437,20 @@ pipeline:
     ) %>%
         r_na(prob=.4)
 
-    ## Source: local data frame [30 x 10]
-    ## 
-    ##       ID     Race   Age    Sex     Hour    IQ Height  Died    Scoring
-    ##    (chr)   (fctr) (int) (fctr)   (tims) (dbl)  (dbl) (lgl)      (dbl)
-    ## 1     01       NA    NA     NA     <NA>    92     NA FALSE  0.1645463
-    ## 2     02       NA    NA     NA 01:30:00    NA     67  TRUE -0.9523500
-    ## 3     03    White    29 Female     <NA>   100     NA FALSE -1.1061811
-    ## 4     04    White    NA     NA     <NA>    NA     67 FALSE -0.4119794
-    ## 5     05       NA    31   Male     <NA>    NA     64    NA  1.6834534
-    ## 6     06 Hispanic    30 Female 03:30:00    NA     68    NA -0.3526578
-    ## 7     07    Black    25     NA     <NA>    84     71 FALSE  0.3983277
-    ## 8     08       NA    NA     NA 04:00:00    NA     NA  TRUE         NA
-    ## 9     09       NA    33 Female 04:30:00    95     73 FALSE         NA
-    ## 10    10    White    30     NA     <NA>    NA     68    NA         NA
-    ## ..   ...      ...   ...    ...      ...   ...    ...   ...        ...
-    ##    Smoker
-    ##     (lgl)
-    ## 1      NA
-    ## 2      NA
-    ## 3      NA
-    ## 4    TRUE
-    ## 5      NA
-    ## 6    TRUE
-    ## 7    TRUE
-    ## 8    TRUE
-    ## 9    TRUE
-    ## 10   TRUE
-    ## ..    ...
+    ## # A tibble: 30 x 10
+    ##    ID    Race       Age Sex    Hour         IQ Height Died  Scoring Smoker
+    ##    <chr> <fct>    <int> <fct>  <S3: tim> <dbl>  <dbl> <lgl>   <dbl> <lgl> 
+    ##  1 01    White       81 Male   <NA>         NA     NA NA      0.862 TRUE  
+    ##  2 02    White       86 <NA>   00:30:00    109     73 TRUE   -0.274 FALSE 
+    ##  3 03    Hispanic    NA Male   03:30:00    111     65 FALSE  NA     TRUE  
+    ##  4 04    White       48 <NA>   03:30:00     NA     72 NA      0.692 TRUE  
+    ##  5 05    White       78 <NA>   03:30:00     NA     NA TRUE   NA     FALSE 
+    ##  6 06    White       80 Male   05:00:00     NA     66 NA     -0.494 TRUE  
+    ##  7 07    <NA>        NA Male   <NA>         NA     67 NA      0.861 FALSE 
+    ##  8 08    <NA>        NA Male   <NA>         88     70 TRUE   -1.76  TRUE  
+    ##  9 09    <NA>        NA Female 07:30:00     82     NA FALSE  NA     NA    
+    ## 10 10    <NA>        59 <NA>   10:00:00     90     63 TRUE    1.30  TRUE  
+    ## # ... with 20 more rows
 
 Repeated Measures & Time Series
 -------------------------------
@@ -491,20 +462,19 @@ function and dictate how many columns (`j`) to produce.
 
     r_series(likert, j = 3, n=10)
 
-    ## Source: local data frame [10 x 3]
-    ## 
-    ##          Likert_1          Likert_2          Likert_3
-    ##            (fctr)            (fctr)            (fctr)
-    ## 1         Neutral          Disagree Strongly Disagree
-    ## 2           Agree           Neutral          Disagree
-    ## 3         Neutral    Strongly Agree          Disagree
-    ## 4        Disagree           Neutral             Agree
-    ## 5  Strongly Agree             Agree           Neutral
-    ## 6           Agree           Neutral          Disagree
-    ## 7           Agree    Strongly Agree Strongly Disagree
-    ## 8           Agree             Agree             Agree
-    ## 9        Disagree             Agree          Disagree
-    ## 10        Neutral Strongly Disagree             Agree
+    ## # A tibble: 10 x 3
+    ##    Likert_1       Likert_2          Likert_3         
+    ##  * <ord>          <ord>             <ord>            
+    ##  1 Neutral        Disagree          Strongly Disagree
+    ##  2 Agree          Neutral           Disagree         
+    ##  3 Neutral        Strongly Agree    Disagree         
+    ##  4 Disagree       Neutral           Agree            
+    ##  5 Strongly Agree Agree             Neutral          
+    ##  6 Agree          Neutral           Disagree         
+    ##  7 Agree          Strongly Agree    Strongly Disagree
+    ##  8 Agree          Agree             Agree            
+    ##  9 Disagree       Agree             Disagree         
+    ## 10 Neutral        Strongly Disagree Agree
 
 Often the user wants a numeric score for Likert type columns and similar
 variables. For series with multiple factors the `as_integer` converts
@@ -517,19 +487,18 @@ here.
 
     as_integer(r_series(likert, j = 5, n=10, name = "Item"))
 
-    ## Source: local data frame [10 x 5]
-    ## 
+    ## # A tibble: 10 x 5
     ##    Item_1 Item_2 Item_3 Item_4 Item_5
-    ##     (int)  (int)  (int)  (int)  (int)
-    ## 1       3      2      1      3      4
-    ## 2       4      3      2      5      4
-    ## 3       3      5      2      5      5
-    ## 4       2      3      4      1      2
-    ## 5       5      4      3      3      4
-    ## 6       4      3      2      2      5
-    ## 7       4      5      1      1      5
-    ## 8       4      4      4      1      3
-    ## 9       2      4      2      2      5
+    ##  *  <int>  <int>  <int>  <int>  <int>
+    ##  1      3      2      1      3      4
+    ##  2      4      3      2      5      4
+    ##  3      3      5      2      5      5
+    ##  4      2      3      4      1      2
+    ##  5      5      4      3      3      4
+    ##  6      4      3      2      2      5
+    ##  7      4      5      1      1      5
+    ##  8      4      4      4      1      3
+    ##  9      2      4      2      2      5
     ## 10      3      1      4      3      1
 
 `r_series` can be used within a `r_data_frame` as well.
@@ -543,22 +512,20 @@ here.
         r_series(likert, 3, name = "Question")
     )
 
-    ## Source: local data frame [100 x 6]
-    ## 
-    ##       ID   Age    Sex        Question_1        Question_2
-    ##    (chr) (int) (fctr)            (fctr)            (fctr)
-    ## 1    001    28   Male             Agree             Agree
-    ## 2    002    24   Male           Neutral    Strongly Agree
-    ## 3    003    26   Male          Disagree           Neutral
-    ## 4    004    31   Male Strongly Disagree           Neutral
-    ## 5    005    21 Female    Strongly Agree Strongly Disagree
-    ## 6    006    23 Female          Disagree          Disagree
-    ## 7    007    24 Female          Disagree    Strongly Agree
-    ## 8    008    24   Male Strongly Disagree             Agree
-    ## 9    009    29 Female             Agree    Strongly Agree
-    ## 10   010    26   Male Strongly Disagree Strongly Disagree
-    ## ..   ...   ...    ...               ...               ...
-    ## Variables not shown: Question_3 (fctr)
+    ## # A tibble: 100 x 6
+    ##    ID      Age Sex    Question_1        Question_2        Question_3      
+    ##  * <chr> <int> <fct>  <ord>             <ord>             <ord>           
+    ##  1 001      54 Male   Agree             Agree             Strongly Disagr~
+    ##  2 002      40 Male   Neutral           Strongly Agree    Disagree        
+    ##  3 003      48 Male   Disagree          Neutral           Disagree        
+    ##  4 004      67 Male   Strongly Disagree Neutral           Disagree        
+    ##  5 005      24 Female Strongly Agree    Strongly Disagree Strongly Disagr~
+    ##  6 006      34 Female Disagree          Disagree          Agree           
+    ##  7 007      37 Female Disagree          Strongly Agree    Strongly Disagr~
+    ##  8 008      37 Male   Strongly Disagree Agree             Agree           
+    ##  9 009      62 Female Agree             Strongly Agree    Strongly Agree  
+    ## 10 010      48 Male   Strongly Disagree Strongly Disagree Agree           
+    ## # ... with 90 more rows
 
     set.seed(10)
 
@@ -569,21 +536,20 @@ here.
         r_series(likert, 5, name = "Item", integer = TRUE)
     )
 
-    ## Source: local data frame [100 x 8]
-    ## 
-    ##       ID   Age    Sex Item_1 Item_2 Item_3 Item_4 Item_5
-    ##    (chr) (int) (fctr)  (int)  (int)  (int)  (int)  (int)
-    ## 1    001    28   Male      4      4      1      1      1
-    ## 2    002    24   Male      3      5      2      1      2
-    ## 3    003    26   Male      2      3      2      1      2
-    ## 4    004    31   Male      1      3      2      4      3
-    ## 5    005    21 Female      5      1      1      5      4
-    ## 6    006    23 Female      2      2      4      3      4
-    ## 7    007    24 Female      2      5      1      5      2
-    ## 8    008    24   Male      1      4      4      5      5
-    ## 9    009    29 Female      4      5      5      4      3
-    ## 10   010    26   Male      1      1      4      1      2
-    ## ..   ...   ...    ...    ...    ...    ...    ...    ...
+    ## # A tibble: 100 x 8
+    ##    ID      Age Sex    Item_1 Item_2 Item_3 Item_4 Item_5
+    ##  * <chr> <int> <fct>   <int>  <int>  <int>  <int>  <int>
+    ##  1 001      54 Male        4      4      1      1      1
+    ##  2 002      40 Male        3      5      2      1      2
+    ##  3 003      48 Male        2      3      2      1      2
+    ##  4 004      67 Male        1      3      2      4      3
+    ##  5 005      24 Female      5      1      1      5      4
+    ##  6 006      34 Female      2      2      4      3      4
+    ##  7 007      37 Female      2      5      1      5      2
+    ##  8 008      37 Male        1      4      4      5      5
+    ##  9 009      62 Female      4      5      5      4      3
+    ## 10 010      48 Male        1      1      4      1      2
+    ## # ... with 90 more rows
 
 ### Related Series
 
@@ -604,75 +570,71 @@ string form here.
 
     r_series(grade, j = 5, n = 100, relate = "+1_6")
 
-    ## Source: local data frame [100 x 5]
-    ## 
+    ## # A tibble: 100 x 5
     ##    Grade_1 Grade_2 Grade_3 Grade_4 Grade_5
-    ##      (dbl)   (dbl)   (dbl)   (dbl)   (dbl)
-    ## 1     84.5    92.5    91.6    87.4    76.7
-    ## 2     93.1    85.0    81.8    87.8    91.3
-    ## 3     81.6    67.5    52.6    48.8    56.8
-    ## 4     92.5    89.3    95.3   102.2    94.5
-    ## 5     96.6    95.9    98.7   115.9   114.7
-    ## 6     89.7    88.1    88.8    89.0    86.4
-    ## 7     92.8    91.7    98.3    98.7   101.6
-    ## 8     92.1    92.9    92.6    85.5    93.1
-    ## 9     90.6    96.9   103.9   107.6   106.2
-    ## 10    96.0    94.8    84.3    91.1   106.6
-    ## ..     ...     ...     ...     ...     ...
+    ##  *   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
+    ##  1    84.5    92.5    91.6    87.4    76.7
+    ##  2    93.1    85      81.8    87.8    91.3
+    ##  3    81.6    67.5    52.6    48.8    56.8
+    ##  4    92.5    89.3    95.3   102.     94.5
+    ##  5    96.6    95.9    98.7   116.    115. 
+    ##  6    89.7    88.1    88.8    89.     86.4
+    ##  7    92.8    91.7    98.3    98.7   102. 
+    ##  8    92.1    92.9    92.6    85.5    93.1
+    ##  9    90.6    96.9   104.    108.    106. 
+    ## 10    96      94.8    84.3    91.1   107. 
+    ## # ... with 90 more rows
 
     r_series(age, 5, 100, relate = "+5_0")
 
-    ## Source: local data frame [100 x 5]
-    ## 
+    ## # A tibble: 100 x 5
     ##    Age_1 Age_2 Age_3 Age_4 Age_5
-    ##    (dbl) (dbl) (dbl) (dbl) (dbl)
-    ## 1     24    29    34    39    44
-    ## 2     24    29    34    39    44
-    ## 3     27    32    37    42    47
-    ## 4     22    27    32    37    42
-    ## 5     32    37    42    47    52
-    ## 6     27    32    37    42    47
-    ## 7     21    26    31    36    41
-    ## 8     29    34    39    44    49
-    ## 9     35    40    45    50    55
-    ## 10    33    38    43    48    53
-    ## ..   ...   ...   ...   ...   ...
+    ##  * <dbl> <dbl> <dbl> <dbl> <dbl>
+    ##  1    37    42    47    52    57
+    ##  2    37    42    47    52    57
+    ##  3    51    56    61    66    71
+    ##  4    29    34    39    44    49
+    ##  5    72    77    82    87    92
+    ##  6    50    55    60    65    70
+    ##  7    23    28    33    38    43
+    ##  8    59    64    69    74    79
+    ##  9    85    90    95   100   105
+    ## 10    77    82    87    92    97
+    ## # ... with 90 more rows
 
     r_series(likert, 5,  100, name ="Item", relate = "-.5_.1")
 
-    ## Source: local data frame [100 x 5]
-    ## 
+    ## # A tibble: 100 x 5
     ##    Item_1 Item_2 Item_3 Item_4 Item_5
-    ##     (dbl)  (dbl)  (dbl)  (dbl)  (dbl)
-    ## 1       2      1      0     -1     -1
-    ## 2       3      2      1      1      0
-    ## 3       1      1      1      0      0
-    ## 4       4      3      3      2      1
-    ## 5       2      1      1      0      0
-    ## 6       2      1      1      1      0
-    ## 7       1      0      0     -1     -2
-    ## 8       2      2      1      1      0
-    ## 9       2      2      1      0      0
+    ##  *  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>
+    ##  1      2      1      0     -1     -1
+    ##  2      3      2      1      1      0
+    ##  3      1      1      1      0      0
+    ##  4      4      3      3      2      1
+    ##  5      2      1      1      0      0
+    ##  6      2      1      1      1      0
+    ##  7      1      0      0     -1     -2
+    ##  8      2      2      1      1      0
+    ##  9      2      2      1      0      0
     ## 10      3      3      3      3      3
-    ## ..    ...    ...    ...    ...    ...
+    ## # ... with 90 more rows
 
     r_series(grade, j = 5, n = 100, relate = "*1.05_.1")
 
-    ## Source: local data frame [100 x 5]
-    ## 
-    ##    Grade_1 Grade_2 Grade_3  Grade_4  Grade_5
-    ##      (dbl)   (dbl)   (dbl)    (dbl)    (dbl)
-    ## 1     85.7   94.27 113.124 113.1240 113.1240
-    ## 2     86.4   77.76  77.760  85.5360  85.5360
-    ## 3     90.6   99.66  89.694  98.6634 108.5297
-    ## 4     89.1   89.10  89.100  71.2800  71.2800
-    ## 5     87.0   95.70 114.840 103.3560 113.6916
-    ## 6     93.9  103.29 123.948 136.3428 136.3428
-    ## 7     80.1   72.09  64.881  84.3453  84.3453
-    ## 8     91.7  110.04 132.048 132.0480 145.2528
-    ## 9     87.4   96.14  96.140 105.7540 116.3294
-    ## 10    92.9   92.90  83.610  91.9710 101.1681
-    ## ..     ...     ...     ...      ...      ...
+    ## # A tibble: 100 x 5
+    ##    Grade_1 Grade_2 Grade_3 Grade_4 Grade_5
+    ##  *   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
+    ##  1    85.7    94.3   113.    113.    113. 
+    ##  2    86.4    77.8    77.8    85.5    85.5
+    ##  3    90.6    99.7    89.7    98.7   109. 
+    ##  4    89.1    89.1    89.1    71.3    71.3
+    ##  5    87      95.7   115.    103.    114. 
+    ##  6    93.9   103.    124.    136.    136. 
+    ##  7    80.1    72.1    64.9    84.3    84.3
+    ##  8    91.7   110.    132.    132.    145. 
+    ##  9    87.4    96.1    96.1   106.    116. 
+    ## 10    92.9    92.9    83.6    92.0   101. 
+    ## # ... with 90 more rows
 
 #### Adjust Correlations
 
@@ -740,7 +702,7 @@ Use the `sd` command to adjust correlations.
             geom_line(size=.8) + 
             theme_bw()
 
-![](inst/figure/unnamed-chunk-17-1.png)
+![](tools/figure/unnamed-chunk-17-1.png)
 
 Expanded Dummy Coding
 ---------------------
@@ -759,22 +721,21 @@ name as the prefix to the `j` columns. Setting `prefix = TRUE` within
         r_dummy(political)
     )
 
-    ## Source: local data frame [100 x 9]
-    ## 
-    ##       ID   Age Sex_Male Sex_Female Democrat Republican Constitution
-    ##    (chr) (int)    (int)      (int)    (int)      (int)        (int)
-    ## 1    001    28        1          0        1          0            0
-    ## 2    002    24        1          0        1          0            0
-    ## 3    003    26        1          0        0          1            0
-    ## 4    004    31        1          0        0          1            0
-    ## 5    005    21        0          1        1          0            0
-    ## 6    006    23        0          1        0          1            0
-    ## 7    007    24        0          1        0          1            0
-    ## 8    008    24        1          0        0          0            0
-    ## 9    009    29        0          1        1          0            0
-    ## 10   010    26        1          0        0          1            0
-    ## ..   ...   ...      ...        ...      ...        ...          ...
-    ## Variables not shown: Libertarian (int), Green (int)
+    ## # A tibble: 100 x 9
+    ##    ID      Age Sex_Male Sex_Female Democrat Republican Constitution
+    ##  * <chr> <int>    <int>      <int>    <int>      <int>        <int>
+    ##  1 001      54        1          0        1          0            0
+    ##  2 002      40        1          0        1          0            0
+    ##  3 003      48        1          0        0          1            0
+    ##  4 004      67        1          0        0          1            0
+    ##  5 005      24        0          1        1          0            0
+    ##  6 006      34        0          1        0          1            0
+    ##  7 007      37        0          1        0          1            0
+    ##  8 008      37        1          0        0          0            0
+    ##  9 009      62        0          1        1          0            0
+    ## 10 010      48        1          0        0          1            0
+    ## # ... with 90 more rows, and 2 more variables: Libertarian <int>,
+    ## #   Green <int>
 
 Visualizing Column Types
 ------------------------
@@ -800,4 +761,4 @@ provide visual glimpse of data types and missing cells.
        r_na() %>%
        plot(palette = "Set1")
 
-![](inst/figure/unnamed-chunk-19-1.png)
+![](tools/figure/unnamed-chunk-19-1.png)

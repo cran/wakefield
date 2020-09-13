@@ -4,7 +4,9 @@
 \name{animal_list}
 \alias{animal_list}
 \title{Animal List}
-\format{A character vector with 591 elements}
+\format{
+A character vector with 591 elements
+}
 \usage{
 data(animal_list)
 }
@@ -12,6 +14,6 @@ data(animal_list)
 A dataset containing a character vector animals
 }
 \references{
-\url{http://a-z-animals.com/animals}
+https://a-z-animals.com/animals
 }
 \keyword{datasets}

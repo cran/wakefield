@@ -1,7 +1,6 @@
 #' Generate Random Lorem Ipsum Strings
 #'
-#' Generates (pseudo)random \href{http://www.lipsum.com/}{\emph{lorem ipsum}}
-#' text.
+#' Generates (pseudo)random lorem ipsum text.
 #'
 #' @param n The number elements to generate.  This can be globally set within
 #' the environment of \code{r_data_frame} or \code{r_list}.
@@ -26,7 +25,7 @@
 lorem_ipsum <- function (n, ..., name = "Lorem_Ipsum") {
 
     if (missing(n)) stop("`n` is missing")
-    out <- stringi::stri_rand_lipsum(n=n, ...)
+    out <- stringi::stri_rand_lipsum(n_paragraphs=n, ...)
     varname(out, name)
 
 }
@@ -36,7 +35,7 @@ lorem_ipsum <- function (n, ..., name = "Lorem_Ipsum") {
 paragraph <- function (n, ..., name = "Paragraph"){
 
     if (missing(n)) stop("`n` is missing")
-    out <- stringi::stri_rand_lipsum(n=n, ...)
+    out <- stringi::stri_rand_lipsum(n_paragraphs=n, ...)
     varname(out, name)
 
 }

@@ -17,6 +17,12 @@ And constructed with the following guidelines:
 * Bug fixes and misc changes bumps the patch
 
 
+wakefield 0.3.6
+----------------------------------------------------------------
+
+* A maintenence release to address stringi's change in `lorem_ipsum()`.
+
+
 wakefield 0.3.3
 ----------------------------------------------------------------
 

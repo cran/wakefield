@@ -38,7 +38,7 @@ levels (1-4) similar to New York State grades 3-8 assessment results.
 }
 \details{
 Distribution of levels (used in \code{prob}) were taken from New
-York State' s 2014 assessment report: \url{http://www.p12.nysed.gov/irs/}
+York State's 2014 assessment report: \url{https://www.nysed.gov/information-reporting-services}
 
 \tabular{lrr}{
   \bold{ Level}   \tab \bold{ELA}  \tab \bold{Math}\cr
@@ -67,7 +67,7 @@ Other variable functions:
 \code{\link{car}()},
 \code{\link{children}()},
 \code{\link{coin}()},
-\code{\link{color}},
+\code{\link{color}()},
 \code{\link{date_stamp}()},
 \code{\link{death}()},
 \code{\link{dice}()},
@@ -77,8 +77,8 @@ Other variable functions:
 \code{\link{education}()},
 \code{\link{employment}()},
 \code{\link{eye}()},
-\code{\link{grade_level}()},
 \code{\link{grade}()},
+\code{\link{grade_level}()},
 \code{\link{group}()},
 \code{\link{hair}()},
 \code{\link{height}()},
@@ -98,8 +98,8 @@ Other variable functions:
 \code{\link{religion}()},
 \code{\link{sat}()},
 \code{\link{sentence}()},
-\code{\link{sex_inclusive}()},
 \code{\link{sex}()},
+\code{\link{sex_inclusive}()},
 \code{\link{smokes}()},
 \code{\link{speed}()},
 \code{\link{state}()},

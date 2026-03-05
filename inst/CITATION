@@ -1,15 +1,16 @@
-citHeader("To cite wakefield in publications, please use:")
-
-
-citEntry(entry = "manual",
-    title = "{wakefield}: Generate Random Data",
-    author = "Tyler W. Rinker",
-    address = "Buffalo, New York",
-    note = "version 0.3.3",
-    year = "2018",
-    url = "https://github.com/trinker/wakefield",
-    textVersion  = paste("Rinker, T. W. (2018).",
-        "wakefield: Generate Random Data.",
-        "version 0.3.3. Buffalo, New York.",
-        "https://github.com/trinker/wakefield")
+bibentry(
+  bibtype = "Manual",
+  title   = "{wakefield}: Generate Random Data",
+  author  = person(given = c("Tyler", "W."), family = "Rinker"),
+  year    = "2018",
+  note    = paste("R package version", meta$Version),
+  address = "Buffalo, New York",
+  url     = meta$URL,
+  textVersion = paste(
+    "Rinker, T. W. (2018).",
+    "wakefield: Generate Random Data.",
+    sprintf("R package version %s.", meta$Version),
+    "Buffalo, New York.",
+    meta$URL
+  )
 )

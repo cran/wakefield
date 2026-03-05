@@ -1,6 +1,6 @@
 Package: wakefield
 Title: Generate Random Data Sets
-Version: 0.3.6
+Version: 0.3.9
 Authors@R: c(
         person("Tyler", "Rinker", email = "tyler.rinker@gmail.com", role = c("aut", "cre")),
         person("Josh", "O'Brien", role = "ctb"), 
@@ -13,9 +13,10 @@ Maintainer: Tyler Rinker <tyler.rinker@gmail.com>
 Description: Generates random data sets including: data.frames, lists,
         and vectors.
 Depends: R (>= 3.2.0)
-Imports: chron, ggplot2, dplyr, stringi
+Imports: chron, ggplot2, dplyr, rlang, stringi
 Suggests: testthat
 License: GPL-2
+Encoding: UTF-8
 LazyData: TRUE
 URL: https://github.com/trinker/wakefield
 BugReports: https://github.com/trinker/wakefield/issues
@@ -36,9 +37,9 @@ Collate: 'utils.R' 'r_sample.R' 'age.R' 'r_sample_factor.R' 'animal.R'
         'sex_inclusive.R' 'smokes.R' 'speed.R' 'state.R' 'string.R'
         'table_heat.R' 'time_stamp.R' 'upper.R' 'valid.R' 'variables.R'
         'varname.R' 'year.R' 'zip_code.R'
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.3
 NeedsCompilation: no
-Packaged: 2020-09-12 16:47:35 UTC; trinker
+Packaged: 2026-03-05 19:44:42 UTC; tylerrinker
 Author: Tyler Rinker [aut, cre],
   Josh O'Brien [ctb],
   Ananda Mahto [ctb],
@@ -46,4 +47,4 @@ Author: Tyler Rinker [aut, cre],
   Jonathan Carroll [ctb],
   Scott Westenberger [ctb]
 Repository: CRAN
-Date/Publication: 2020-09-13 17:30:02 UTC
+Date/Publication: 2026-03-05 20:20:02 UTC
